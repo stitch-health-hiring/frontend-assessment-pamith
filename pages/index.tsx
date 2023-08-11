@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
+import { getAllPatients } from '../services/patientService'
+import { Patient } from '../types/patients'
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
+import PatientTable from '../components/PatientTable/PatientTable'
 
-export default function Home(): JSX.Element {
+export const getServerSideProps: GetServerSideProps<{
+	patientData: Patient[]
+}> = async () => {
+	const response = await getAllPatients()
+
+	return { props: { patientData: response } }
+}
+
+export default function Home({
+	patientData,
+}: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element {
 	return (
 		<>
 			<Head>
@@ -14,36 +28,7 @@ export default function Home(): JSX.Element {
 				<h1>Patients</h1>
 			</header>
 			<main>
-				<table>
-					<thead>
-						<tr>
-							<th>Name</th>
-							<th>ID</th>
-							<th>Date of birth</th>
-							<th>Registration date</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Firstname Lastname</td>
-							<td>abc123</td>
-							<td>1st January 1950</td>
-							<td>1st January 2020</td>
-						</tr>
-						<tr>
-							<td>Firstname Lastname</td>
-							<td>abc123</td>
-							<td>1st January 1950</td>
-							<td>1st January 2020</td>
-						</tr>
-						<tr>
-							<td>Firstname Lastname</td>
-							<td>abc123</td>
-							<td>1st January 1950</td>
-							<td>1st January 2020</td>
-						</tr>
-					</tbody>
-				</table>
+				<PatientTable patientData={patientData} />
 			</main>
 		</>
 	)
