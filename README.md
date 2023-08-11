@@ -12,7 +12,7 @@ To finish the assessment you should push your code to github, in a new branch, a
 
 ## Section 1: Data and interaction
 
-The app needs to load its data from a remote source instead of having it hardcoded. There are two API routes you can use for this within the next.js app. Either the REST endpoint which is: http://localhost:3000/api/patients **OR** using the GraphQL server available via http://localhost:3000/api/graphql. 
+The app needs to load its data from a remote source instead of having it hardcoded. There are two API routes you can use for this within the next.js app. Either the REST endpoint which is: http://localhost:3000/api/patients **OR** using the GraphQL server available via http://localhost:3000/api/graphql.
 
 You should also allow the user to sort the table by each column, by selecting from a dropdown menu - e.g. they would select "Name" from the dropdown to put the table in alphabetical order by name.
 
@@ -20,9 +20,9 @@ You should also allow the user to sort the table by each column, by selecting fr
 
 If you have completed section 1 and still have time remaining, then select one or more of the following features and add them to the codebase:
 
-* Improve the styling so that the table is easy to read
-* Add another interaction so that when the user clicks on a patient they are taken to a new page that displays that patient's name, date of birth and favourite colour
-* Add conditional formatting so that patients who were born before 1st January 1960 are displayed in a different colour
-* Add a text input box where the user can enter a name, and filter the table contents to match that name
+- Improve the styling so that the table is easy to read
+- Add another interaction so that when the user clicks on a patient they are taken to a new page that displays that patient's name, date of birth and favourite colour
+- Add conditional formatting so that patients who were born before 1st January 1960 are displayed in a different colour
+- Add a text input box where the user can enter a name, and filter the table contents to match that name
 
 We would prefer you to do one or two well than rush through all of them. Note that some are expected to take longer than others, so bear that in mind when making your choice.
