@@ -1,10 +1,14 @@
-import React from 'react';
+import React from 'react'
 import { render, screen } from '@testing-library/react'
 
-import Index from '../pages/index';
+import Index from '../pages/index'
 
 test('renders title', () => {
-  render(<Index />);
-  const headerElement = screen.getByText(/Patients/);
-  expect(headerElement).toBeInTheDocument();
-});
+	render(<Index />)
+	const headerElement = screen.getByText(/Patients/)
+	expect(headerElement).toBeInTheDocument()
+})
+
+test('renders patient information', () => {
+	render(<Index />)
+})
